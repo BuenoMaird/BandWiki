@@ -11,7 +11,7 @@ $(document).ready(function(){
   var connectSoundCloud = function(){
   SC.initialize({
   client_id: "9fe36ec8f8911ba5b8afa911f2cc7ef6",
-  redirect_uri: "http://BandWiki.herokuapp.com",
+  redirect_uri: "//BandWiki.herokuapp.com",
   });
   connectSoundCloud()
 }
