@@ -1,3 +1,16 @@
-// var app = app || {}
+var app = app || {}
 
-// app.searchListView = Backbone.view.extend
+app.SearchListView = Backbone.View.extend({
+  el: '#app',
+
+  initialize: function(){
+    //Empty for now
+  },
+
+  render: function() {
+    console.log('searchList is rendering');
+    var sLV = $('#searchListView').html();
+    var sLVHTML = _.template(sLV);
+    $('#searchList').append(sLVHTML)
+  }
+});

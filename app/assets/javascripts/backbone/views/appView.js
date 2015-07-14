@@ -4,8 +4,6 @@ app.AppView = Backbone.View.extend({
   el:'#app',
 
   initialize: function (){
-    // searchView.render();
-    // searchListView.render();
   },
 
   render: function (){
@@ -15,6 +13,9 @@ app.AppView = Backbone.View.extend({
 
     var searchView = new app.SearchView
     searchView.render()
+
+    var searchListView = new app.SearchListView
+    searchListView.render()
   }
 
 });

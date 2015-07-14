@@ -20,11 +20,15 @@ app.SearchView = Backbone.View.extend({
   searchSoundCloud: function (e){
     var searchTerm = $('#searchItem').val()
     event.preventDefault();
-    SC.get('/tracks', {q: searchTerm, license: 'cc-by-sa'}, function(tracks){
-      SC.oEmbed(tracks[1].uri, {auto_play: true}, document.getElementById('player'));
-      debugger
-
+    SC.get('/tracks', {q: searchTerm, license: 'cc-by-sa'},  function(tracks){
+      console.log(tracks)
+      for (var i = 0; i < tracks.length; i++) {
+        SC.oEmbed(tracks[i].uri, {auto_play: false, maxheight: 81px}, document.getElementById('songList'));
+        debugger
+      };
     });
   }
 
 });
+
+      // SC.oEmbed(tracks[1].uri, {auto_play: true}, document.getElementById('player'));
