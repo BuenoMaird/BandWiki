@@ -23,7 +23,7 @@ app.SearchView = Backbone.View.extend({
     SC.get('/tracks', {q: searchTerm, license: 'cc-by-sa'},  function(tracks){
       console.log(tracks)
       for (var i = 0; i < tracks.length; i++) {
-        SC.oEmbed(tracks[i].uri, {auto_play: false, maxheight: 81px}, document.getElementById('songList'));
+        SC.oEmbed(tracks[i].uri, {auto_play: false}, document.getElementById('songList'));
         debugger
       };
     });
