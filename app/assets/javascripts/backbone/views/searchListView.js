@@ -2,9 +2,11 @@ var app = app || {}
 
 app.SearchListView = Backbone.View.extend({
   el: '#app',
+  events:{
+    'click': 'appendPlaylist'
+  },
 
   initialize: function(){
-    //Empty for now
   },
 
   render: function() {
@@ -13,4 +15,6 @@ app.SearchListView = Backbone.View.extend({
     var sLVHTML = _.template(sLV);
     $('#searchList').append(sLVHTML)
   }
+
+
 });

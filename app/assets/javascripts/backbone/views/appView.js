@@ -12,10 +12,10 @@ app.AppView = Backbone.View.extend({
     this.$el.html(appHTML);
 
     var searchView = new app.SearchView
-    searchView.render()
+    searchView.render();
 
     var searchListView = new app.SearchListView
-    searchListView.render()
+    searchListView.render();
   }
 
 });

@@ -18,14 +18,19 @@ app.SearchView = Backbone.View.extend({
   },
 
   searchSoundCloud: function (e){
+    $('#songList').html('')
     var searchTerm = $('#searchItem').val()
+    var searchData = []
     event.preventDefault();
-    SC.get('/tracks', {q: searchTerm, license: 'cc-by-sa'},  function(tracks){
-      console.log(tracks)
-      for (var i = 0; i < tracks.length; i++) {
-        SC.oEmbed(tracks[i].uri, {auto_play: false}, document.getElementById('songList'));
-        debugger
+    //Gets all the users based on the search term
+    SC.get('/users', { client_id:'9fe36ec8f8911ba5b8afa911f2cc7ef6', license: 'cc-by-sa', q: searchTerm },  function(data){
+      for (var i = 0; i < data.length; i++) {
+        searchData.push(data[i])
+
+        var sRV = new app.SearchResultView
+        sRV.render(data[i])
       };
+      app.searchData = searchData
     });
   }
 
