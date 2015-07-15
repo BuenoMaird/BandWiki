@@ -1,7 +1,5 @@
 class BandsController < ApplicationController
 
-  require 'pry'
-
   def index
     @bands = Band.all
     if params[:scID]
