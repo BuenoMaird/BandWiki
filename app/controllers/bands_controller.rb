@@ -12,6 +12,8 @@ class BandsController < ApplicationController
         @band.name = @scInfo.username
         @band.bio = @scInfo.description
         @band.location = @scInfo.country
+        @band.website = @scInfo.website
+        @band.soundcloud = @scInfo.permalink_url
         @band.save
         # binding.pry
 
@@ -38,7 +40,8 @@ class BandsController < ApplicationController
   end
 
   def update
-    band.update
+    band = Band.find_by(scID: params[:scID])
+    band.update band_params
   end
 
   def destroy

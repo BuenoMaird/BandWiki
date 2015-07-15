@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require_tree ./backbone/models
+//= require froala_editor.min.js
 
 //= require_tree ./backbone/views
 //= require_tree ./backbone/router

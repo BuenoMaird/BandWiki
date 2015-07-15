@@ -11,7 +11,6 @@ app.BandInfo = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('band info is rendering');
     var bandView = $('#bandInfoView').html();
     var bVHTML = _.template(bandView);
     $('#bandInfo').append(bVHTML);
@@ -19,6 +18,13 @@ app.BandInfo = Backbone.View.extend({
   },
 
   edit: function() {
+    var froala = function(){
+      $('#edit').editable({
+        inlineMode: false
+      })
+    };
+    froala()
+    $('#edit').show()
     var editView = new app.EditBandView
     editView.render()
   }

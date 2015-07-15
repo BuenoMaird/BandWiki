@@ -30,9 +30,9 @@ app.SearchResultView = Backbone.View.extend({
 
   bandFromDB: function(){
     var view = this
-    var band = new app.Band({scID: this.$el.data('id')});
-    band.fetch({ data: { scID: band.toJSON().scID } }).done(function(){
-      view.appendBandInfo(band);
+    app.band = new app.Band({scID: this.$el.data('id')});
+    app.band.fetch({ data: { scID: app.band.toJSON().scID } }).done(function(){
+      view.appendBandInfo(app.band);
     });
   }
 })

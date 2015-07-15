@@ -14,7 +14,6 @@ app.Band = Backbone.Model.extend({
   },
 
   intialize: function(){
-    console.log('new band created')
   }
 
 
