@@ -35,5 +35,3 @@ app.SearchView = Backbone.View.extend({
   }
 
 });
-
-      // SC.oEmbed(tracks[1].uri, {auto_play: true}, document.getElementById('player'));

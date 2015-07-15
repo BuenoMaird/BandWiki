@@ -3,22 +3,36 @@ var app = app || {}
 app.SearchResultView = Backbone.View.extend({
   tagName: 'li',
   events: {
-    'click': 'appendPlaylist'
+    'dblclick': 'appendPlaylist',
+    'click': 'bandFromDB'
   },
 
 
   render: function(data) {
-    // console.log('search result view is appending');
-    // var searchResultView = $('#searchResultView').html();
-    // var sRVHTML = _.template(searchResultView);
-    // console.log(data);
-    this.$el.html(data.username).data("uri", data.uri);
+    //Saves the data.uri into an accesible .data element so it can be retrieved in other functions function.
+    this.$el.html(data.username).data(data);
     $('#songList').append(this.$el);
 
   },
 
   appendPlaylist: function (){
-    SC.oEmbed( this.$el.data("uri"),{auto_play: true},   document.getElementById('player') );
+    SC.oEmbed( this.$el.data("uri"),{auto_play: true}, document.getElementById('player') );
+  },
+
+  appendBandInfo: function (band){
+    var bandInfo = new app.BandInfo;
+    bandInfo.render();
+    $('#bandName').html('Name: ' + band.attributes.name);
+    $('#bandCountry').html('Country: ' + band.attributes.location)
+    $('#bandBio').html('Bio: ' + band.attributes.bio);
     // debugger
+  },
+
+  bandFromDB: function(){
+    var view = this
+    var band = new app.Band({scID: this.$el.data('id')});
+    band.fetch({ data: { scID: band.toJSON().scID } }).done(function(){
+      view.appendBandInfo(band);
+    });
   }
 })

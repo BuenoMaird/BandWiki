@@ -8,6 +8,7 @@
     <div id="searchList"></div>
     <div id="bandInfo"></div>
     <div id="player"></div>
+    <div id="edit"></div>
   </div>
 </script>
 
@@ -24,5 +25,16 @@
   </ul>
 </script>
 
-<!-- <script id="searchResultView" type="text/template">
-</script> -->
+<script id="bandInfoView" type="text/template">
+  <h2 id="bandName"></h2>
+  <h2 id="bandCountry"></h2>
+  <p id="bandBio"></p>
+</script>
+
+<script id="editBandView" type="text/template">
+  <form action="">
+    <label>Bio</label>
+    <input type="text_field" id="editText">
+    <button id="editClose">edit</button>
+  </form>
+</script>

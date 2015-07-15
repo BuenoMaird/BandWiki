@@ -12,6 +12,7 @@
 #  soundcloud  :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  scID        :string
 #
 
 class Band < ActiveRecord::Base

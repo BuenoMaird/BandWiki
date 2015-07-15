@@ -8,7 +8,13 @@ app.Band = Backbone.Model.extend({
     members: 'Unknown members',
     yearsActive: 'Unknown',
     website: 'Unknown website',
-    soundcloud: 'unknown soundcloud link'
+    soundcloud: 'unknown soundcloud link',
+    scID: '',
+    bio: 'unknown bio'
+  },
+
+  intialize: function(){
+    console.log('new band created')
   }
 
 
