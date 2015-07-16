@@ -3,7 +3,9 @@ var app = app || { }
 app.EditBandView = Backbone.View.extend({
   el: '#bandInfo',
   events: {
-    'click #editUpdate': 'update',
+    'click #editBio': 'updateBio',
+    'click #editCountry': 'updateCont',
+    'click #editName': 'updateName',
     'click #editClose': 'close'
   },
 
@@ -17,15 +19,36 @@ app.EditBandView = Backbone.View.extend({
     $('#bandInfo').append(eBVHTML)
   },
 
-  update: function(e){
+  updateBio: function(e){
     event.preventDefault();
-    app.band.attributes.bio = $('#edit').editable('getHTML')
+    app.band.attributes.bio = $('#edit').editable('getHTML');
     $('#bandBio').html($('#edit').editable('getHTML'));
-    app.band.save()
+    app.band.save();
     $('#editForm').remove();
-    $('#edit').hide()
-    var sRV = new app.SearchResultView
-    sRV.render()
+    $('#edit').hide();
+    var sRV = new app.SearchResultView;
+    sRV.render();
+  },
+
+  updateCont: function(e){
+    event.preventDefault();
+    app.band.attributes.location = $('#edit').editable('getHTML');
+    $('#bandCountry').html($('#edit').editable('getHTML'));
+    app.band.save();
+    $('#editForm').remove();
+    $('#edit').hide();
+    var sRV = new app.SearchResultView;
+    sRV.render();
+  },
+
+  updateName: function(e){
+    event.preventDefault();
+    app.band.attributes.name = $('#edit').editable('getHTML');
+    $('#bandName').html($('#edit').editable('getHTML'));
+    app.band.save();
+    $('#editform').remove();
+    var sRV = new app.SearchResultView;
+    sRV.render();
   },
 
   close: function() {

@@ -4,7 +4,8 @@ app.BandInfo = Backbone.View.extend({
   el: '#app',
 
   events: {
-    'dblclick #bioHead': 'edit'
+    'dblclick #bioHead': 'editBio',
+    'dblclick #bioCont': 'editCont'
   },
 
   initialize: function(){
@@ -17,7 +18,19 @@ app.BandInfo = Backbone.View.extend({
     // debugger
   },
 
-  edit: function() {
+  editBio: function() {
+    var froala = function(){
+      $('#edit').editable({
+        inlineMode: false
+      })
+    };
+    froala()
+    $('#edit').show()
+    var editView = new app.EditBandView
+    editView.render()
+  },
+
+  editCont: function() {
     var froala = function(){
       $('#edit').editable({
         inlineMode: false

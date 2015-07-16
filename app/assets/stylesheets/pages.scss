@@ -11,8 +11,13 @@ h1,h2,h3,h4,h5,h6,p,li{
 }
 
 nav{
+  height: 50px;
   li{
+    padding: 0;
     display: inline-block;
+    font-size: 1.3em;
+    margin-right: 100px;
+    line-height: 100px;
   }
 }
 
@@ -84,12 +89,19 @@ p{
       cursor: pointer;
       border-bottom: 2px solid rgba(230, 230, 230, 1);
       border-radius: 0px 0px 20px 20px;
-      transition: .3s
+      transition: 1s
     }
     li:hover{
       font-size: 1.7em;
     }
+    li:active{
+      background-color: red;
+    }
   }
+}
+
+#searchList::-webkit-scrollbar { 
+    display: none; 
 }
 
 #bandInfo{
@@ -97,7 +109,6 @@ p{
   overflow: scroll;
   h2{
     text-align: center;
-    border-bottom: 2px solid rgba(230, 230, 230, 1);
     margin-bottom: 20px;
   }
   #nameHead, #bioHead, #contHead{
@@ -106,7 +117,12 @@ p{
   }
   #bandName, #bandCountry, #bandBio{
     font-family: 'Rokkitt';
+    border-bottom: 2px solid rgba(230, 230, 230, 1);
   }
+}
+
+#bandInfo::-webkit-scrollbar { 
+    display: none; 
 }
 
 #SCSearch{
