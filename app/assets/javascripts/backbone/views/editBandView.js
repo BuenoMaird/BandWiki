@@ -3,7 +3,8 @@ var app = app || { }
 app.EditBandView = Backbone.View.extend({
   el: '#bandInfo',
   events: {
-    'click #editClose': 'close',
+    'click #editUpdate': 'update',
+    'click #editClose': 'close'
   },
 
   initialize: function(){
@@ -16,7 +17,7 @@ app.EditBandView = Backbone.View.extend({
     $('#bandInfo').append(eBVHTML)
   },
 
-  close: function(e){
+  update: function(e){
     event.preventDefault();
     app.band.attributes.bio = $('#edit').editable('getHTML')
     $('#bandBio').html($('#edit').editable('getHTML'));
@@ -25,8 +26,13 @@ app.EditBandView = Backbone.View.extend({
     $('#edit').hide()
     var sRV = new app.SearchResultView
     sRV.render()
-
   },
+
+  close: function() {
+    event.preventDefault();
+    $('#editForm').remove()
+    $('#edit').hide()
+  }
 
 
 });

@@ -20,12 +20,12 @@ app.SearchResultView = Backbone.View.extend({
   },
 
   appendBandInfo: function (band){
+    $('#bandName, #bandCountry, #bandBio, #nameHead, #contHead, #bioHead').remove();
     var bandInfo = new app.BandInfo;
     bandInfo.render();
-    $('#bandName').html('Name: ' + band.attributes.name);
-    $('#bandCountry').html('Country: ' + band.attributes.location)
-    $('#bandBio').html('Bio: ' + band.attributes.bio);
-    // debugger
+    $('#bandName').html(band.attributes.name);
+    $('#bandCountry').html(band.attributes.location);
+    $('#bandBio').html(band.attributes.bio);
   },
 
   bandFromDB: function(){

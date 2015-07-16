@@ -21,9 +21,16 @@ app.SearchView = Backbone.View.extend({
     $('#songList').html('')
     var searchTerm = $('#searchItem').val()
     var searchData = []
+    var page_size = 200
     event.preventDefault();
     //Gets all the users based on the search term
-    SC.get('/users', { client_id:'9fe36ec8f8911ba5b8afa911f2cc7ef6', license: 'cc-by-sa', q: searchTerm },  function(data){
+    SC.get('/users', { client_id:'9fe36ec8f8911ba5b8afa911f2cc7ef6',
+                        license: 'cc-by-sa',
+                        q: searchTerm,
+                        limit: page_size,
+                        // linked_partitioning: 1
+                         },
+    function(data){
       for (var i = 0; i < data.length; i++) {
         searchData.push(data[i])
 

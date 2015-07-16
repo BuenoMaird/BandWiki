@@ -4,7 +4,7 @@ app.BandInfo = Backbone.View.extend({
   el: '#app',
 
   events: {
-    'dblclick': 'edit'
+    'dblclick #bioHead': 'edit'
   },
 
   initialize: function(){

@@ -1,3 +1,114 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Norican);
+@import url(http://fonts.googleapis.com/css?family=Rokkitt);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+
+h1,h2,h3,h4,h5,h6,p,li{
+  margin: 0
+}
+
+nav{
+  li{
+    display: inline-block;
+  }
+}
+
+p{
+  font-family: 'Vollkorn';
+  font-size: 1.2em;
+
+}
+
+#mainHeader{
+  margin-bottom: -20px;
+  font-family: 'Norican';
+  font-size: 10em;
+  text-align: center;
+}
+
+#mainHeadTag{
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Norican';
+  text-decoration: underline 2px black;
+}
+
+#search{
+  text-align: center;
+  #searchItem{
+    border: none;
+    border-radius: 5px 5px 00px 0px; 
+    min-height: 50px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    transition: 2s;
+    font-size: 1.7em;
+    font-family: 'Rokkitt'
+  }
+  #searchItem:focus{
+    outline: none;
+    background-color: #d1d1d1
+  }
+  button{
+    border: none;
+    background: none;
+    font-family: 'Rokkitt';
+    font-size: 1.4em;
+    text-transform: uppercase;
+    text-transform: bold;
+    background-color: #d1d1d1;
+    border-radius: 0px 0px 20px 20px;
+    transition: .5s;
+    margin-bottom: 10px;
+  }
+  button:hover{
+    background-color: #a4a4a4
+  }
+}
+
+#searchList{
+  line-height: 50px;
+  max-height: 500px;
+  overflow: scroll;
+  ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    li{
+      font-size: 1.5em;
+      font-family: 'Rokkitt';
+      cursor: pointer;
+      border-bottom: 2px solid rgba(230, 230, 230, 1);
+      border-radius: 0px 0px 20px 20px;
+      transition: .3s
+    }
+    li:hover{
+      font-size: 1.7em;
+    }
+  }
+}
+
+#bandInfo{
+  max-height: 500px;
+  overflow: scroll;
+  h2{
+    text-align: center;
+    border-bottom: 2px solid rgba(230, 230, 230, 1);
+    margin-bottom: 20px;
+  }
+  #nameHead, #bioHead, #contHead{
+    font-family: 'Norican';
+    font-size: 4em;
+  }
+  #bandName, #bandCountry, #bandBio{
+    font-family: 'Rokkitt';
+  }
+}
+
+#SCSearch{
+
+}
