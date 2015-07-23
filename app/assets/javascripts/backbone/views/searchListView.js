@@ -10,7 +10,6 @@ app.SearchListView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('searchList is rendering');
     var sLV = $('#searchListView').html();
     var sLVHTML = _.template(sLV);
     $('#searchList').append(sLVHTML)

@@ -16,9 +16,6 @@ $(document).ready(function(){
     connectSoundCloud()
   }
 
-  var bandInfo = new app.BandInfo;
-  bandInfo.render();
-
 
   // Start up the router and begin tracking the backbone history
   app.router = new app.AppRouter();

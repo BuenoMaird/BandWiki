@@ -10,18 +10,16 @@ app.SearchView = Backbone.View.extend({
   },
   // Renders the searchView template onto the views div
   render: function(){
-    console.log('view is rendering')
-    var searchTemplate = $('#searchView').html()
-    var searchHTML = _.template(searchTemplate)
+    var searchTemplate = $('#searchView').html();
+    var searchHTML = _.template(searchTemplate);
     $('#search').append(searchHTML);
-    console.log(searchHTML)
   },
 
   searchSoundCloud: function (e){
-    $('#songList').html('')
-    var searchTerm = $('#searchItem').val()
-    var searchData = []
-    var page_size = 200
+    $('#songList').html('');
+    var searchTerm = $('#searchItem').val();
+    var searchData = [];
+    var page_size = 200;
     event.preventDefault();
     //Gets all the users based on the search term
     SC.get('/users', { client_id:'9fe36ec8f8911ba5b8afa911f2cc7ef6',
@@ -32,12 +30,12 @@ app.SearchView = Backbone.View.extend({
                          },
     function(data){
       for (var i = 0; i < data.length; i++) {
-        searchData.push(data[i])
+        searchData.push(data[i]);
 
         var sRV = new app.SearchResultView
-        sRV.render(data[i])
+        sRV.render(data[i]);
       };
-      app.searchData = searchData
+      app.searchData = searchData;
     });
   }
 

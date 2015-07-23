@@ -1,7 +1,7 @@
 var app = app || {}
 
 app.Band = Backbone.Model.extend({
-  urlRoot: '/bands',
+  urlRoot: '/bands/',
   defaults: {
     name: 'Untitled band',
     location: 'Unknown location',
