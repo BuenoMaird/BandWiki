@@ -3,7 +3,6 @@ var app = app || {}
 app.SearchResultView = Backbone.View.extend({
   tagName: 'li',
   events: {
-    'dblclick': 'appendPlaylist',
     'click': 'bandFromDB'
   },
 
@@ -12,10 +11,6 @@ app.SearchResultView = Backbone.View.extend({
     //Saves the data.uri into an accesible .data element so it can be retrieved in other functions function.
     this.$el.html(data.username).data(data);
     $('#songList').append(this.$el);
-  },
-
-  appendPlaylist: function (){
-    SC.oEmbed( this.$el.data("uri"),{auto_play: true}, document.getElementById('player') );
   },
 
   appendBandInfo: function (band){
@@ -28,6 +23,7 @@ app.SearchResultView = Backbone.View.extend({
   },
 
   bandFromDB: function(){
+    // debugger;
     // Returns the bands id based on the soundcloud id from the li.
     var id = this.$el.data('id');
     app.router.navigate('band/' + id, true);

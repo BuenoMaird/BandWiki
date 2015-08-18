@@ -4,18 +4,24 @@ app.BandInfo = Backbone.View.extend({
   el: '#app',
 
   events: {
-    'dblclick #bioHead': 'editBio',
-    'dblclick #bioCont': 'editCont'
+    'click #bioHead': 'editBio',
+    'click #bioCont': 'editCont',
+    'click #ASbutton': 'appendPlayer'
   },
 
   initialize: function(){
   },
 
   render: function() {
+    
     var bandView = $('#bandInfoView').html();
     var bVHTML = _.template(bandView);
     $('#bandInfo').append(bVHTML);
     // debugger
+  },
+
+  appendPlayer: function(){
+    SC.oEmbed( app.band.attributes.uri,{auto_play: true}, document.getElementById('player') );
   },
 
   editBio: function() {

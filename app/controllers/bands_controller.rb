@@ -14,6 +14,7 @@ class BandsController < ApplicationController
         @band.location = @scInfo.country
         @band.website = @scInfo.website
         @band.soundcloud = @scInfo.permalink_url
+        @band.uri = @scInfo.uri
         @band.save
         # binding.pry
 

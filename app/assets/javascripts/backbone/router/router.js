@@ -12,7 +12,7 @@ app.AppRouter = Backbone.Router.extend({
   initialize: function (){
     var appView = new app.AppView();
     appView.render();
-    console.log(appView)
+    console.log(appView);
   },
 
   index: function() {

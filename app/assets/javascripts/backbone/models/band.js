@@ -10,6 +10,7 @@ app.Band = Backbone.Model.extend({
     website: 'Unknown website',
     soundcloud: 'unknown soundcloud link',
     scID: '',
+    uri: '',
     bio: 'unknown bio'
   },
 

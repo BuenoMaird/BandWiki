@@ -32,7 +32,7 @@ app.SearchView = Backbone.View.extend({
       for (var i = 0; i < data.length; i++) {
         searchData.push(data[i]);
 
-        var sRV = new app.SearchResultView
+        var sRV = new app.SearchResultView;
         sRV.render(data[i]);
       };
       app.searchData = searchData;
