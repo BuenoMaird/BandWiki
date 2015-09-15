@@ -87,7 +87,9 @@ Setup: I will briefly run through the setup of backbone.
 
 This is a very brief overview of the file struction for Backbone. Please feel free to view the code in my files for a more indepth view into how these folders and files are built and once again I highly recommend reading the Backbonejs.org annotated docs for a much more cohesive look into backbone and it's amazing potential.
 
+Conclusion...
 
+This site and I have a very much love hate relationship. I am constantly thinking about updates I can impliment and I love sitting down to try and tackle that implimentation. So far it is more of a mess then I hope it would be but I am loving the challenge is it providing. I think I will be working on it for many years to come.
 
 
 
